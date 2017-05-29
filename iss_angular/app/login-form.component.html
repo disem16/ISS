@@ -1,0 +1,23 @@
+<div class="opacity">
+	<form [ngFormModel]="form" (ngSubmit)="onSubmit()" >
+		<img src="./media/publics.jpg" alt="MEDIC Logo">
+			<div class="input-group">
+				<span class="input-group-addon"><img class="icon" src="./media/publics.jpg" alt="MEDIC Logo"></span>
+				<input type="text" class="form-control" name="username" id="username" ngControl="name" 
+	            [(ngModel)]="user.name" #name="ngForm" placeholder="Enter your Name" required/>
+			</div>
+			<div class="input-group">
+				<span class="input-group-addon"><img class="icon" src="./media/password.png" alt="MEDIC Logo"></span>
+				<input type="password" class="form-control" name="password" id="password" ngControl="password"
+	            [(ngModel)]="user.password" #password="ngForm" placeholder="Enter your Password" required/>
+			</div>
+		<button type="submit" class="form-control" [disabled]="!form.valid"> Login </button>
+		<div *ngIf="errorOccured" class="visible">
+			<div *ngIf="alertt">
+				<div class="alert alert-danger fade in">
+				    <strong>Error!</strong> {{errorMess}}
+				</div>
+			</div>
+		</div>
+	</form>
+</div>

@@ -1,0 +1,22 @@
+
+:host {
+    display: flex;
+    font-family: Arial, Helvetica, sans-serif;
+}
+section {
+    width: 100%;
+}
+section > header {
+    color: #ffffff;
+    padding: 10px;
+}
+section > header > h1 {
+    font-size: 2em;
+}
+section > header .description {
+    font-style: italic;
+}
+.buton {
+	margin-right: 50px;
+	margin-top: 50px;
+}

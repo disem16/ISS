@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.iss</groupId>
+	<artifactId>iss</artifactId>
+	<packaging>pom</packaging>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<modules>
+		<module>iss_core</module>
+		<module>iss_rest</module>
+	</modules>
+
+	<properties>
+
+		<spring.version>4.2.4.RELEASE</spring.version>
+		<springData.version>1.9.2.RELEASE</springData.version>
+
+		<javaxFaces.version>2.3.0-m04</javaxFaces.version>
+
+		<jerseyMediaJsonJackson.version>2.22.2</jerseyMediaJsonJackson.version>
+
+		<hibernate.version>5.0.6.Final</hibernate.version>
+
+		<jta.version>1.1</jta.version>
+
+		<javaxAnnotationApi.version>1.2</javaxAnnotationApi.version>
+
+		<jerseyContainerServlet.version>2.17</jerseyContainerServlet.version>
+
+		<javaxWsRsApi.version>2.0</javaxWsRsApi.version>
+
+		<javaxServletApi.version>3.1.0</javaxServletApi.version>
+
+		<elri.version>1.0</elri.version>
+
+		<slf4j.version>1.7.12</slf4j.version>
+		<log4j.version>1.2.17</log4j.version>
+
+		<postgresql.version>9.4-1206-jdbc4</postgresql.version>
+		<liquibase.version>3.4.1</liquibase.version>
+		<commonsdbcp.version>1.4</commonsdbcp.version>
+
+		<junit.version>4.4</junit.version>
+		<mockito.version>1.10.19</mockito.version>
+
+		<!-- Project versions -->
+		<issCore.version>1.0.0</issCore.version>
+		<issRest.version>1.0.0</issRest.version>
+
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<!-- SPRING -->
+			<dependency>
+      			<groupId>javax.transaction</groupId>
+      			<artifactId>jta</artifactId>
+    		    <version>1.1</version>
+  			</dependency>
+			
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-orm</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-context</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-core</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-web</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.data</groupId>
+				<artifactId>spring-data-jpa</artifactId>
+				<version>${springData.version}</version>
+			</dependency>
+
+			<!-- GLASSFISH -->
+			<dependency>
+				<groupId>org.glassfish</groupId>
+				<artifactId>javax.faces</artifactId>
+				<version>${javaxFaces.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.glassfish.jersey.media</groupId>
+				<artifactId>jersey-media-json-jackson</artifactId>
+				<version>${jerseyMediaJsonJackson.version}</version>
+			</dependency>
+
+			<!-- Jersey impl -->
+			<dependency>
+				<groupId>org.glassfish.jersey.containers</groupId>
+				<artifactId>jersey-container-servlet</artifactId>
+				<version>${jerseyContainerServlet.version}</version>
+			</dependency>
+
+			<!-- HIBERNATE -->
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-entitymanager</artifactId>
+				<version>${hibernate.version}</version>
+			</dependency>
+
+			<!-- JTA -->
+			<dependency>
+				<groupId>javax.transaction</groupId>
+				<artifactId>jta</artifactId>
+				<version>${jta.version}</version>
+			</dependency>
+
+			<!-- JAVAX.ANNOTATION-API -->
+			<dependency>
+				<groupId>javax.annotation</groupId>
+				<artifactId>javax.annotation-api</artifactId>
+				<version>${javaxAnnotationApi.version}</version>
+			</dependency>
+
+			<!-- Servlet api -->
+			<dependency>
+				<groupId>javax.servlet</groupId>
+				<artifactId>javax.servlet-api</artifactId>
+				<version>${javaxServletApi.version}</version>
+			</dependency>
+
+			<!-- JAX-RS api -->
+			<dependency>
+				<groupId>javax.ws.rs</groupId>
+				<artifactId>javax.ws.rs-api</artifactId>
+				<version>${javaxWsRsApi.version}</version>
+			</dependency>
+
+			<!-- EL-RI -->
+			<dependency>
+				<groupId>com.sun.el</groupId>
+				<artifactId>el-ri</artifactId>
+				<version>${elri.version}</version>
+			</dependency>
+
+			<!--DATABASE -->
+			<dependency>
+				<groupId>org.postgresql</groupId>
+				<artifactId>postgresql</artifactId>
+				<version>${postgresql.version}</version>
+			</dependency>
+
+			<!-- TEST -->
+			<dependency>
+				<groupId>junit</groupId>
+				<artifactId>junit</artifactId>
+				<version>${junit.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.mockito</groupId>
+				<artifactId>mockito-all</artifactId>
+				<version>${mockito.version}</version>
+			</dependency>
+
+
+			<!-- LiquiBase -->
+			<dependency>
+				<groupId>org.liquibase</groupId>
+				<artifactId>liquibase-core</artifactId>
+				<version>${liquibase.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>commons-dbcp</groupId>
+				<artifactId>commons-dbcp</artifactId>
+				<version>${commonsdbcp.version}</version>
+			</dependency>
+
+			<!-- Logging -->
+			<dependency>
+				<groupId>log4j</groupId>
+				<artifactId>log4j</artifactId>
+				<version>${log4j.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-api</artifactId>
+				<version>${slf4j.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-log4j12</artifactId>
+				<version>${slf4j.version}</version>
+			</dependency>
+
+
+
+			<dependency>
+				<groupId>com.iss</groupId>
+				<artifactId>iss_core</artifactId>
+				<version>${issCore.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.iss</groupId>
+				<artifactId>iss_rest</artifactId>
+				<version>${issRest.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>apache.snapshots</id>
+			<name>Apache Snapshots</name>
+			<url>http://people.apache.org/repo/m2-snapshot-repository</url>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</pluginRepository>
+	</pluginRepositories>
+	
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.3</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

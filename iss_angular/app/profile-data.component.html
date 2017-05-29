@@ -1,0 +1,35 @@
+<div class="panel-body">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h1 calss="profile-name"> About me </h1>
+        </div>
+        <div class="panel-body">
+            <div class="table">
+                <div class="profile-image">
+                    <br>
+                    <img [src]="'data:image/jpg;base64,'+userProfileData.photo" class="profile"/>
+                    <br><br>
+                </div>
+                <div class="profile-fields">
+                  <br><br>
+                  <p class="profile-blue">Name:</p>
+                  <p class="profile-blue">Mobile:</p>
+                  <p class="profile-blue">Email:</p>
+                  <p class="profile-blue">Address:</p>
+                  <p class="profile-blue">Nationality:</p>
+                 
+                  <br>
+                </div>
+                <div class="profile-info">
+                    <br><br>
+                    <p class="profile">{{userProfileData.name}}</p>
+                    <p class="profile">{{userProfileData.mobile}}</p>
+                    <p class="profile">{{userProfileData.maddress}}</p>
+                    <p class="profile">{{userProfileData.address}}</p>
+                    <p class="profile">{{userProfileData.nationality}}</p>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

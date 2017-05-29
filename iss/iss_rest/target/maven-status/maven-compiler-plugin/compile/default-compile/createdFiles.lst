@@ -1,0 +1,3 @@
+com\iss\app\rest\UserRestService.class
+com\iss\app\rest\LoginService.class
+com\iss\app\rest\CorsFilter.class

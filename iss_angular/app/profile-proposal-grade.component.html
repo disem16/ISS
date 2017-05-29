@@ -1,0 +1,22 @@
+<div class="panel-body">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4>Add grades</h4>
+        </div>
+        <div class="panel-body">
+            <form>
+                      <select [(ngModel)]="prop.id"  id="proposalSelect" >
+                        <option *ngFor="#p of proposals" [value]="p.id"  > {{p.name}}</option>
+                      </select>
+                      <select [(ngModel)]="grade.idgrade"  id="proposalSelect" >
+                        <option *ngFor="#g of grades" [value]="g.idgrade"  > {{g.name}}</option>
+                      </select>
+                      <button type="button" class="btn btn-default" data-dismiss="modal" (click)="onSubmit()"> Submit </button>
+            </form>
+
+        </div> 
+
+    </div>
+</div>
+
+        

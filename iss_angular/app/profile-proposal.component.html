@@ -1,0 +1,56 @@
+<div class="panel-body">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4>Proposals</h4>
+        </div>
+        <div class="panel-body">
+            <br>
+            <div *ngFor="#proposal of proposals">
+                <div class="proposal">
+                    <p class="proposal">Neme: {{proposal.name}}</p>
+                    <p class="proposal">Reviewer: {{ proposal.userReviewer }}</p>
+                    <p class="proposal">Domain: {{ proposal.domain }}</p>
+                     <p class="proposal">Averagemark: {{ proposal.averagemark }}</p>
+                </div>
+            </div>
+            <div *ngIf="administrator==true">
+                 <div>
+                      <p align="center" color="red">Delete</p>
+                      <form>
+                      <select [(ngModel)]="prop.id"  id="conferenceSelect" >
+                        <option *ngFor="#p of proposals" [value]="p.id"  > {{p.name}}</option>
+                      </select>
+                      <button type="button" class="btn btn-default" data-dismiss="modal" (click)="delete()"> Delete </button>
+
+                      </form>
+
+                    </div>
+             </div>
+             <div> <!-- adaugarea de propuneri -->
+                  <h1 align="center">Add one proposal</h1>
+                  <form>
+                  <div>
+                  <div class="input-group"> <!-- Name -->
+                        <input type="text" class="form-control" name="name" id="name" ngControl="name" 
+                             [(ngModel)]="pnew.name" #name="ngForm" placeholder="Name: " required/>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="domain" id="domain" ngControl="domain" 
+                             [(ngModel)]="pnew.domain" #domain="ngForm" placeholder="Domain: " required/>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="document" id="document" ngControl="document" 
+                             [(ngModel)]="pnew.document" #document="ngForm" placeholder="Document: " required/>
+                    </div>
+
+                  </div>
+                  <button type="button" class="btn btn-default" data-dismiss="modal" (click)="onSubmit()"> Submit</button>
+
+                  </form>
+             </div>
+        </div> 
+
+    </div>
+</div>
+
+        

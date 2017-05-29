@@ -1,0 +1,97 @@
+h1 {
+	text-align: center;
+	color: #004080;
+	font-size: 40px;
+}
+
+input, button {
+  outline: none;
+  border: none;
+  opacity: none;
+}
+
+form {
+  top: 50%;
+  width: 360px;
+  padding: 1.5rem 2.5rem;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 90px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  background-color: rgba(255,255,255,0.8);
+}
+
+input {
+  height: 50px;
+  width: 100%;
+  font-size: 20px;
+  padding-left: 1.5rem;
+  padding-bottom: 1.5rem;
+  padding-top: 1.5rem;
+  background: transparent;
+  color: black;
+  background-color: #FFFFFF;
+  margin: 8px 0;
+  border: 2px solid #d9d9d9;
+  border-radius: 5px;
+}
+
+button {
+  width: 100%;
+  height: 40px;
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
+  font-size: 20px;
+  background: transparent;
+  color: white;
+  background-color: #3973ac;
+  border-radius: 5px;
+  margin: 8px 0;
+  margin-bottom: 25px;
+}
+
+img {
+	width: 300px;
+	margin-bottom: 1.5rem;
+}
+
+img.icon {
+  width: 16px;
+  margin-bottom: 0;
+  margin-top: 5px;
+}
+
+.input-group-addon {
+  height: 20px;
+  top: 0;
+  margin-top: 5px;
+}
+
+.form-control {
+  font-size: 18px;
+}
+
+#password, #username{
+  margin: 0 auto;
+  text-align: justify;
+}
+
+div.input-group {
+  margin-top:10px;
+  margin-top:10px;
+}
+
+button[type=submit]:disabled {
+  background-color: #3973ac;
+  color: white;
+  cursor: default;
+}
+
+button:hover {
+  background-color: #264d73;
+}
+
+.visible {
+    visibility: true;
+}

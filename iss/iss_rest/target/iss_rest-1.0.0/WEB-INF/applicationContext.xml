@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xmlns:jpa="http://www.springframework.org/schema/data/jpa" 
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+     
+     
+	<!-- JPA Repositories: Spring Data -->
+	<jpa:repositories base-package="com.iss.app"></jpa:repositories>
+
+	<context:component-scan base-package="com.iss.app">
+		<context:include-filter type="annotation"
+			expression="com.iss.app.DataStore.DataStore" />
+	</context:component-scan>
+
+	<tx:annotation-driven transaction-manager="transactionManager" />
+	<context:annotation-config />
+	
+	<!-- DATASOURCE -->
+	<bean id="postgresDataSource"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName">
+			<value>org.postgresql.Driver</value>
+		</property>
+		<property name="url" value="jdbc:postgresql://127.0.0.1:5432/iss" />
+		<property name="username" value="iss_user" />
+		<property name="password" value="root" />
+	</bean>
+	
+	<!-- Entity Manager -->
+	<bean id="entityManagerFactory"
+		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+		<property name="dataSource" ref="postgresDataSource" />
+		<property name="packagesToScan">
+			<list>
+				<value>com.iss.app</value>
+			</list>
+		</property>
+		<property name="jpaVendorAdapter">
+			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
+				<property name="databasePlatform" value="org.hibernate.dialect.PostgreSQLDialect" />
+			</bean>
+		</property>
+	</bean> 
+	
+	<!-- Transaction Manager -->
+	 <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager"> 
+		<property name="entityManagerFactory" ref="entityManagerFactory" />
+</bean>
+	
+	
+	
+</beans>

@@ -1,0 +1,59 @@
+<div class="panel-body">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4>Conference</h4>
+        </div>
+        <div class="panel-body">
+        <div>
+        <h4 align="center">Add Conference</h4>
+            <form  >
+				<div  *ngIf="user==true">
+                
+                <div>
+				<p>Select one conference:</p>
+				<select [(ngModel)]="conf.conference"  id="conferenceSelect" >
+                        <option *ngFor="#c of conferences" [value]="c.conference"  > {{c.conference}}</option>
+                 </select>
+                 </div>  
+                 </div>
+                <div *ngIf="administrator==true">
+                   <div>
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="conference" id="conference" ngControl="conference" 
+                             [(ngModel)]="conf.conference" #conference="ngForm" placeholder="Type: " required/>
+                    </div>
+                    <div class="input-group">
+                    <input type="text" class="form-control" name="deadline" id="deadline" ngControl="deadline" 
+                            [(ngModel)]="conf.deadline" #deadline="ngForm" placeholder="Date:" required/>
+                    </div>
+                </div>
+                </div>
+                
+			
+			<button type="button" class="btn btn-default" data-dismiss="modal" (click)="onSubmit()"> Submit</button>
+			
+			
+		</form>
+        </div> 
+        </div>
+        <div *ngIf="administrator==true"> <!-- delete conference -->
+         <h4 align="center">Delete Conference</h4>
+         <form>
+            <div >
+                <p>Select one conference</p>
+                <select [(ngModel)]="confd.conference"  id="conferenceSelect" >
+                        <option *ngFor="#c of conferences" [value]="c.conference"  > {{c.conference}}</option>
+                 </select>
+
+            </div>
+            <div>
+            <button type="button" class="btn btn-default" data-dismiss="modal" (click)="onDelete()"> Delete</button>
+            </div>
+         </form>
+
+        </div>
+
+    </div>
+</div>
+
+        
